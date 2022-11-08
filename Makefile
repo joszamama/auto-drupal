@@ -1,5 +1,9 @@
 clear:
 	docker-compose down -v
+	sudo rm -rf ./drupal/d_modules
+	sudo rm -rf ./drupal/d_profiles
+	sudo rm -rf ./drupal/d_sites
+	sudo rm -rf ./drupal/d_themes
 
 autoinstall:
 	docker-compose up -d

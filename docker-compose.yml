@@ -20,6 +20,20 @@ services:
     networks:
       - drupal
 
+  # PHPMyAdmin
+  drupal_pma:
+    depends_on:
+      - drupal_db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: drupal_db
+      MYSQL_ROOT_PASSWORD: drupal
+    ports:
+      - "8081:80"
+    networks:
+      - drupal
+
   # Drupal
   drupal:
     image: drupal:9-php7.4-apache

@@ -1,4 +1,4 @@
-clear:
+clean:
 	docker-compose down -v
 	sudo rm -rf ./drupal/d_modules
 	sudo rm -rf ./drupal/d_profiles
